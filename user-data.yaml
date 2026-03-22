@@ -2,6 +2,10 @@
 autoinstall:
   version: 1                        # OBBLIGATORIO — sempre 1
 
+  # ─── CONFERME ────────────────────────────────────────────
+  # Salta tutte le domande interattive
+  interactive-sections: []
+
   # ─── LOCALE ──────────────────────────────────────────────
   locale: it_IT.UTF-8               # lingua del sistema installato
   timezone: Europe/Rome
@@ -27,12 +31,12 @@ autoinstall:
 
   # ─── IDENTITÀ ────────────────────────────────────────────
   identity:
-    hostname:   # nome del computer (senza spazi)
-    username:   # nome utente senza spazi
+    hostname: OpenNebula   # nome del computer (senza spazi)
+    username: gabriele  # nome utente senza spazi
     # password DEVE essere in formato hash bcrypt/SHA-512
     # generalo con: mkpasswd --method=SHA-512
-    password: ""
-    realname:   # nome completo (opzionale)
+    password: "$6$9aUXKEhwVluI5IWp$TqtRcQYRrzB5oh29YlC4PVsHqGa34FA.9h0Vh7F6L3GPfkk.aTO0U8e/HVTWLDWUQUWKxxS057jOC5ZquCaw81" #Chiavett4
+    # realname:   # nome completo (opzionale)
 
   # ─── SSH ─────────────────────────────────────────────────
   ssh:
@@ -110,7 +114,3 @@ autoinstall:
   user-data:
     runcmd:
       - echo "Sistema pronto!" >> /var/log/firstboot.log
-
-  # ─── CONFERME ────────────────────────────────────────────
-  # Salta tutte le domande interattive
-  interactive-sections: []
