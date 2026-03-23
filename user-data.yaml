@@ -92,8 +92,6 @@ autoinstall:
     - sed
     - ufw
     - openssh-sftp-server
-    - libcrypto
-    - libssl
 
   # Aggiorna tutti i pacchetti dopo l'installazione
   package_update: true
