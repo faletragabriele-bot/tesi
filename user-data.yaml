@@ -92,6 +92,9 @@ autoinstall:
     - sed
     - ufw
     - openssh-sftp-server
+    - gnupg
+    - wget
+    - apt-transport-https
 
   # Aggiorna tutti i pacchetti dopo l'installazione
   package_update: true
@@ -107,6 +110,7 @@ autoinstall:
     - curtin in-target --target=/target -- systemctl enable ufw
     - curtin in-target --target=/target -- ufw allow ssh #riga fondamentale per permettere al server di accettare connessioni SSH dopo il riavvio
     - curtin in-target --target=/target -- ufw --force enable
+    - curtin in-target --target=/target -- bash autoOpenNebula.sh #script per installare OpenNebula
 
   # ─── USER-DATA (cloud-init aggiuntivo) ───────────────────
   # Eseguito al primo avvio del sistema installato
